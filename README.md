@@ -21,6 +21,6 @@ Napomena: ukoliko na lokalnoj mašini želite da zauzmete neki drugi port, na pr
 
 Korištene tehnologije:
 - *Java 19*
-- *Sprint boot 3.3.5*
+- *Sprint Boot 3.3.5*
 - *H2 in-memory baza podataka*
 
