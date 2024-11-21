@@ -1,5 +1,5 @@
 Ručno pokretanje projekta:
-- pozicionirati se unutar projekta
+- pozicionirati se unutar projekta 5-dana-u-oblacima
 - izvršiti komandu ***mvn package***
 - u okviru target direktorijuma će biti generisan jar fajl, npr ***pet-dana-u-oblacima-0.0.1-SNAPSHOT.jar***
 - izvršiti komandu ***java -Xmx2048M -jar target/pet-dana-u-oblacima-0.0.1-SNAPSHOT.jar.original***
