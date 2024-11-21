@@ -17,6 +17,7 @@ Pokretanje projekta kroz docker:
 Napomena: ukoliko na lokalnoj mašini želite da zauzmete neki drugi port, na primjer 9091, docker run komanda bi bila<br>
   ***docker run -d -p 9091:8080 match_making***
 
+<br>
 Korištene tehnologije:
 - *Java 19*
 - *Sprint boot 3.3.5*
