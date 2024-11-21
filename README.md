@@ -18,6 +18,7 @@ Napomena: ukoliko na lokalnoj mašini želite da zauzmete neki drugi port, na pr
   ***docker run -d -p 9091:8080 match_making***
 
 <br>
+
 Korištene tehnologije:
 - *Java 19*
 - *Sprint boot 3.3.5*
