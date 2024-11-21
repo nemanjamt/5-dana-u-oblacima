@@ -14,7 +14,7 @@ Pokretanje projekta kroz docker:
 - izvršiti komandu ***docker run -d -p 8080:8080 match_making***
 - api je dostupan na portu 8080
   
-  Napomena: ukoliko na lokalnoj mašini želite da zauzmete neki drugi port, na primjer 9091, docker run komanda bi bila
+Napomena: ukoliko na lokalnoj mašini želite da zauzmete neki drugi port, na primjer 9091, docker run komanda bi bila
   ***docker run -d -p 9091:8080 match_making***
 
 Korištene tehnologije:
