@@ -1,6 +1,8 @@
 package com.example.petdanauoblacima.service.implementation;
 
 import com.example.petdanauoblacima.dto.match.MatchCreateDto;
+import com.example.petdanauoblacima.exception.InvalidWinningTeamIdException;
+import com.example.petdanauoblacima.exception.MatchBetweenSameTeamException;
 import com.example.petdanauoblacima.model.Match;
 import com.example.petdanauoblacima.model.Player;
 import com.example.petdanauoblacima.model.Team;
@@ -27,6 +29,10 @@ public class MatchServiceImpl implements MatchService {
     public void addMatch(MatchCreateDto matchCreateDto) {
         Match match = new Match();
 
+        if(matchCreateDto.getTeam1Id().equals(matchCreateDto.getTeam2Id())) {
+            throw new MatchBetweenSameTeamException("Cannot create a match between the same team");
+        }
+
         Team team1 = teamService.findTeamById(matchCreateDto.getTeam1Id());
         Team team2 = teamService.findTeamById(matchCreateDto.getTeam2Id());
 
@@ -34,6 +40,11 @@ public class MatchServiceImpl implements MatchService {
         match.setTeam2(team2);
 
         if(matchCreateDto.getWinningTeamId() != null) {
+
+            if((!(matchCreateDto.getWinningTeamId().equals(matchCreateDto.getTeam1Id()) ||
+                    matchCreateDto.getWinningTeamId().equals(matchCreateDto.getTeam2Id())))) {
+                throw new InvalidWinningTeamIdException("Winning team id is incorrect. If it is defined it should be equal team1Id or team2Id.");
+            }
             Team winningTeam = teamService.findTeamById(matchCreateDto.getWinningTeamId());
             match.setWinningTeam(winningTeam);
         }

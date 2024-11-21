@@ -11,6 +11,7 @@ import com.example.petdanauoblacima.repository.TeamRepository;
 import com.example.petdanauoblacima.service.PlayerService;
 import com.example.petdanauoblacima.service.TeamService;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -41,6 +42,7 @@ public class TeamServiceImpl implements TeamService {
         return teamRepository.findById(teamId).get();
     }
 
+    @Transactional
     public TeamResponse createTeam(TeamCreateDto teamCreateDto) {
         Team team = new Team();
         if(teamRepository.existsByTeamName(teamCreateDto.getTeamName())) {

@@ -1,8 +1,6 @@
 package com.example.petdanauoblacima.exception.handler;
 
-import com.example.petdanauoblacima.exception.NicknameAlreadyExists;
-import com.example.petdanauoblacima.exception.TeamAlreadyAssigned;
-import com.example.petdanauoblacima.exception.TeamNameAlreadyExist;
+import com.example.petdanauoblacima.exception.*;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -43,6 +41,16 @@ public class ExceptionHandlers extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(value={TeamAlreadyAssigned.class})
     protected ResponseEntity<String> handleTeamAlreadyAssigned(RuntimeException ex, WebRequest request){
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(value={MatchBetweenSameTeamException.class})
+    protected ResponseEntity<String> handleMatchBetweenSameTeam(RuntimeException ex, WebRequest request){
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(value={InvalidWinningTeamIdException.class})
+    protected ResponseEntity<String> handleInvalidWinningTeamId(RuntimeException ex, WebRequest request){
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
