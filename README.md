@@ -13,7 +13,7 @@ Pokretanje projekta kroz docker:
 - izvršiti komandu ***docker run -d -p 8080:8080 match_making***
 
 Korištene tehnologije:
-*Java 19*
-*Sprint boot 3.3.5*
-*H2 in-memory baza podataka*
+- *Java 19*
+- *Sprint boot 3.3.5*
+- *H2 in-memory baza podataka*
 
