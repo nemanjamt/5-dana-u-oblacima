@@ -1,4 +1,4 @@
-Projekat za kvalifikacije za hakaton „[5 dana u oblacima](https://5danauoblacima.com/ "5 dana u oblacima")“
+Projekat za kvalifikacije za hakaton [5 dana u oblacima](https://5danauoblacima.com/ "5 dana u oblacima")
 
 Ručno pokretanje projekta:
 - pozicionirati se unutar projekta 5-dana-u-oblacima
